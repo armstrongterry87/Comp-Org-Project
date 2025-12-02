@@ -67,5 +67,11 @@ print_number:
     move $a0, $s1               #load 0 into $a0
     syscall                     # print 0
     j    update_fib_and_counter #done printing for i=0
+print_fcurr:
+    #case i >= 1: print_fcurr
+    move $a0, $s2               #load F_curr into $a0
+    syscall                     #print F_curr
+    #the first 2 nums are 0 and 1 and are printed outside the calculation
+    #so calculation needs to wait until i >= 2
 
 
