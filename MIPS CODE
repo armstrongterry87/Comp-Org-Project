@@ -29,6 +29,12 @@ illegal_input:
     la    $a0, error_msg    #Load address of error message
     syscall                 # print error_msg
 
+    #loop back to get new input
+    j    input_loop         # go back to input_loop
+
+    #Step 2: Fibonacci Sequence Calculation and Printing
+fibonacci_sequence:
+
 
 
 
