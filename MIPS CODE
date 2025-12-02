@@ -54,5 +54,10 @@ print_loop:
     # check if i > 0 to deicing on printing ","
     bne    $t0, 0, print_coma    #If i != 0, print deperator
 
+print_number:
+    # Determine the number to print:
+    # If i = 0, print $s1 (0)
+    # If i = 1, print $s2 (1)
+    # If i >= 2, print $s2 (F_curr) which has the next value
 
 
