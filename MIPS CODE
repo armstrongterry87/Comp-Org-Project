@@ -1,1 +1,5 @@
-
+.data
+prompt_msg: .asciiz "Enter an integer N (N >= 22): "
+error_msg:  .asciiz "Illegal Number! N must be >= 22.\n"
+newline:    .asciiz "\n"
+comma_space: .asciiz ", "
