@@ -45,5 +45,14 @@ fibonacci_sequence:
     li   $s2, 1                 # F_curr = 1 (F_1)
     li   $t0, 0                 # i = 0 (counter)
 
+    #check if N is 0 since N >= 22
+
+print_loop:
+    #check if we printed N numbers (i < N)
+    bge    $t0, $s0, end_program # if i >= N, sequence is complete
+
+    # check if i > 0 to deicing on printing ","
+    bne    $t0, 0, print_coma    #If i != 0, print deperator
+
 
 
