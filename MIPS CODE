@@ -32,10 +32,18 @@ illegal_input:
     #loop back to get new input
     j    input_loop         # go back to input_loop
 
+
     #Step 2: Fibonacci Sequence Calculation and Printing
 fibonacci_sequence:
+    # Initialize registers for Fibonacci
+    # $s0 holds N (the count limit)
+    # $s1 holds F_prev (starts at 0, F_0)
+    # $s2 holds F_curr (starts at 1, F_1)
+    # $t0 holds loop counter i (starts at 0)
 
-
+    li   $s1, 0                 # F_prev = 0 (F_0)
+    li   $s2, 1                 # F_curr = 1 (F_1)
+    li   $t0, 0                 # i = 0 (counter)
 
 
 
