@@ -90,5 +90,14 @@ update_fib_and_counter:
 
     j    print_loop             # Loop back to check condition
 
+print_comma:
+    #Print the ", " seperator
+    li    $v0, 4                # Load syscall code for print_string
+    la    $a0, comma_space      # load address of ", "
+    syscall                     # Print ", "
+
+    #Exit Program
+    li    $v0, 10               #Load syscall code for exit
+    syscall                     #Exit
 
 
