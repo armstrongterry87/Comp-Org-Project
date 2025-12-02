@@ -74,4 +74,10 @@ print_fcurr:
     #the first 2 nums are 0 and 1 and are printed outside the calculation
     #so calculation needs to wait until i >= 2
 
+update_fib_and_counter:
+    #calculation only happens starting from the end of the i = 1 loop iteration
+    #for the next number (i=2)
+    addi $t0, $t0, 1            #increment counter i
+
+
 
