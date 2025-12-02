@@ -60,4 +60,12 @@ print_number:
     # If i = 1, print $s2 (1)
     # If i >= 2, print $s2 (F_curr) which has the next value
 
+    li    $v0, 1                # load syscall code for print_int
+    bgt    $t0, 0, print_fcurr  #if i > 0, we print F_curr($s2)
+
+    # case i = 0: print F_0 ($s1)
+    move $a0, $s1               #load 0 into $a0
+    syscall                     # print 0
+    j    update_fib_and_counter #done printing for i=0
+
 
