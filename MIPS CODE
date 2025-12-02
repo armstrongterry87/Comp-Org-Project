@@ -10,3 +10,12 @@ comma_space: .asciiz ", "
 main:
     #Step 1: Input and Validation Loop
 input_loop:
+    # prompt the user for N
+
+    li $v0, 4            # Load syscall code for print_string
+    syscall              # REad integer into $v0
+    move $s0, $v0        # Move N from $v0 to $s0 (N is stored in $s0)
+
+
+
+
