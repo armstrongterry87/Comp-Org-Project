@@ -1,1 +1,33 @@
+#include <stdio.h>
 
+int main(void) {
+    int N;
+
+    /* Step 1: read legal N (N >= 22) */
+    do {
+        printf("Enter N (N >= 22): ");
+        scanf("%d", &N);
+
+        if (N < 22) {
+            printf("Illegal Number!\n");
+        }
+    } while (N < 22);
+
+    /* Step 2: print first N Fibonacci numbers starting from 0, 1 */
+    int prev  = 0;  // F(0)
+    int curr  = 1;  // F(1)
+    int count = 0;  // how many numbers printed
+
+    while (count < N) {
+        printf("%d ", prev);     // print current number
+
+        int next = prev + curr;  // compute next Fibonacci
+        prev = curr;             // shift to the next pair
+        curr = next;
+
+        count++;
+    }
+
+    printf("\n");
+    return 0;
+}
