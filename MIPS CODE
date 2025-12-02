@@ -23,6 +23,12 @@ input_loop:
     #Input is legal go to step 2
     j    fibonacci_sequence
 
+illegal_input:
+    #display error message
+    li    $v0, 4            # Load syscall code for print string
+    la    $a0, error_msg    #Load address of error message
+    syscall                 # print error_msg
+
 
 
 
