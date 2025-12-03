@@ -55,7 +55,7 @@ print_loop:
     bge    $t0, $s0, end_program # if i >= N, sequence is complete
 
     # check if i > 0 to deicing on printing ","
-    bne    $t0, 0, print_coma    #If i != 0, print deperator
+    bne    $t0, 0, print_comma    #If i != 0, print deperator
 
 print_number:
     # Determine the number to print:
@@ -98,9 +98,9 @@ print_comma:
     li    $v0, 4                # Load syscall code for print_string
     la    $a0, comma_space      # load address of ", "
     syscall                     # Print ", "
+    j     print_number          #continue to print the number
 
-    #Exit Program
-    li    $v0, 10               #Load syscall code for exit
-    syscall                     #Exit
+    
+   
 
 
