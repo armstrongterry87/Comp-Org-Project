@@ -10,7 +10,10 @@ comma_space: .asciiz ", "
 main:
     #Step 1: Input and Validation Loop
 input_loop:
-    # Step 2: prompt the user for N
+    #1. prompt the user for N
+    li   $v0, 4                 # Load syscall code for print_string
+    la   $a0, prompt_msg        # Load address of prompt message
+    syscall                     # Print prompt_msg
 
     li $v0, 4            # Load syscall code for print_string
     syscall              # REad integer into $v0
@@ -31,7 +34,6 @@ illegal_input:
 
     #loop back to get new input
     j    input_loop         # go back to input_loop
-
 
     #Step 2: Fibonacci Sequence Calculation and Printing
 fibonacci_sequence:
