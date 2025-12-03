@@ -15,6 +15,7 @@ input_loop:
     la   $a0, prompt_msg        # Load address of prompt message
     syscall                     # Print prompt_msg
 
+    #2. read integer N
     li $v0, 4            # Load syscall code for print_string
     syscall              # REad integer into $v0
     move $s0, $v0        # Move N from $v0 to $s0 (N is stored in $s0)
@@ -23,7 +24,7 @@ input_loop:
     li    $t1, 22
     blt    $s0, $t1, illegal_input    #Branch if N < 22
 
-    #Input is legal go to step 2
+    #4. Input is legal go to step 2
     j    fibonacci_sequence
 
 illegal_input:
