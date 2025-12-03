@@ -95,10 +95,20 @@ update_fib_and_counter:
 
 print_comma:
     #Print the ", " seperator
-    li    $v0, 4                # Load syscall code for print_string
+    li    $v0, 4                # Load syscall code for read_int
     la    $a0, comma_space      # load address of ", "
     syscall                     # Print ", "
     j     print_number          #continue to print the number
+
+end_program:
+    # Print final newline for clean output
+    li   $v0, 4                 # print_string
+    la   $a0, newline           # load "\n"
+    syscall
+    
+    # Exit the program
+    li   $v0, 10                # Load syscall code for exit
+    syscall                     # Exit
 
     
    
